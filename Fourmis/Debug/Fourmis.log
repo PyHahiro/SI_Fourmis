@@ -1,0 +1,6 @@
+﻿  Source.cpp
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(122,15): warning C4244: 'argument' : conversion de 'int' en 'GLfloat', perte possible de données
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(123,15): warning C4244: 'argument' : conversion de 'int' en 'GLfloat', perte possible de données
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(114,12): warning C4101: 'j' : variable locale non référencée
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(114,9): warning C4101: 'i' : variable locale non référencée
+  Fourmis.vcxproj -> C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Debug\Fourmis.exe
