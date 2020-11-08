@@ -65,7 +65,7 @@ void drawCorpsTorse();
 void drawTete();
 void drawCou();
 void drawOeil(float posX,float posY,float posZ);
-void drawAntenne(float angle, float ecart, float z);
+void drawAntenne();
 
 int main(int argc, char** argv)
 {
@@ -152,7 +152,7 @@ void affichage()
     drawOeil(-0.25,0.85,-1.22);
 
     glColor3d(255, 255, 255);
-    drawAntenne(-140, 0, -1.22);
+    drawAntenne();
 
     glFlush();
     //glutPostRedisplay();
@@ -226,108 +226,38 @@ void drawCou()
     glPopMatrix();
 }
 
-void drawAntenne(float angle, float ecart, float z)
+void drawAntenne()
 {
     /*
-    Patte milieu gauche
-    */
-    float x = angle; //Angle des pattes
-    float e = ecart; //Ecartement des pattes
-    float depZ = z; //Deplacer en z les pates
-
-    glPushMatrix();
-    glTranslated(-e, 0.85, depZ);
-    //Pied1
-    glPushMatrix();
-    glRotated(x, 0, 1, 0);
-    glTranslated(0, 0.02, 0.11);
-    glRotated(-40, 1, 0, 0);
-
-    glScalef(0.3f, 0.1f, 1.0f);
-    gluCylinder(pObj, 0.1, 0.1, 0.15, 35, 1);
-    glPopMatrix();
-
-    //Main1
-    glPushMatrix();
-    glRotated(x, 0, 1, 0);
-    glTranslatef(0, 0.12, 0.23);
-    glRotated(-55, 1, 0, 0);
-
-    glScalef(0.3f, 0.1f, 1.0f);
-    gluCylinder(pObj, 0.1, 0.1, 0.4, 35, 1);
-    glPopMatrix();
-
-    //Tibia1
-    glPushMatrix();
-    glRotated(x, 0, 1, 0);
-    glTranslatef(0, 0.45, 0.46);
-    glRotated(-60, 1, 0, 0);
-
-    glScalef(0.3f, 0.2f, 1.0f);
-    gluCylinder(pObj, 0.1, 0.1, 0.4, 35, 1);
-    glPopMatrix();
-
-
-    //Cuisse1
-    glPushMatrix();
-    glRotated(x, 0, 1, 0);
-    glTranslatef(0, 0.78, 0.65);
-    glRotated(30, 1, 0, 0);
-
-    glScalef(0.3f, 0.2f, 1.0f);
-    gluCylinder(pObj, 0.1, 0.1, 0.4, 35, 1);
-    glPopMatrix();
-
-    glPopMatrix();
-
-
-    /*
-    Patte milieu droite
+    Antenne gauche
     */
 
-
     glPushMatrix();
-    glTranslated(e, 0.85, depZ);
-
-    //Pied2
+    glTranslated(-0.5, 1.1, -1.1);
     glPushMatrix();
-    glRotated(-x, 0, 1, 0);
-    glTranslated(0, 0.02, 0.11);
-    glRotated(-40, 1, 0, 0);
-
-    glScalef(0.3f, 0.1f, 1.0f);
-    gluCylinder(pObj, 0.1, 0.1, 0.15, 35, 1);
-    glPopMatrix();
-
-    //Main2
-    glPushMatrix();
-    glRotated(-x, 0, 1, 0);
-    glTranslatef(0, 0.12, 0.23);
-    glRotated(-55, 1, 0, 0);
-
-    glScalef(0.3f, 0.1f, 1.0f);
-    gluCylinder(pObj, 0.1, 0.1, 0.4, 35, 1);
-    glPopMatrix();
-
-    //Tibia2
-    glPushMatrix();
-    glRotated(-x, 0, 1, 0);
-    glTranslatef(0, 0.45, 0.46);
-    glRotated(-60, 1, 0, 0);
-
-    glScalef(0.3f, 0.2f, 1.0f);
-    gluCylinder(pObj, 0.1, 0.1, 0.4, 35, 1);
-    glPopMatrix();
-
-
-    //Cuisse2
-    glPushMatrix();
-    glRotated(-x, 0, 1, 0);
-    glTranslatef(0, 0.78, 0.65);
+    glRotated(120, 0, 1, 0);
     glRotated(30, 1, 0, 0);
+    gluCylinder(pObj, 0.02, 0.02, 0.5,30,30);
+    glPopMatrix();
 
-    glScalef(0.3f, 0.2f, 1.0f);
-    gluCylinder(pObj, 0.1, 0.1, 0.4, 35, 1);
+    glPushMatrix();
+    glRotated(170, 0, 1, 0);
+    gluCylinder(pObj, 0.02, 0.02, 1, 30, 30);
+    glPopMatrix();
+
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslated(0.5, 1.1, -1.1);
+    glPushMatrix();
+    glRotated(-120, 0, 1, 0);
+    glRotated(30, 1, 0, 0);
+    gluCylinder(pObj, 0.02, 0.02, 0.5, 30, 30);
+    glPopMatrix();
+
+    glPushMatrix();
+    glRotated(-170, 0, 1, 0);
+    gluCylinder(pObj, 0.02, 0.02, 1, 30, 30);
     glPopMatrix();
 
     glPopMatrix();
