@@ -40,6 +40,7 @@ int fCube[6][4] = {
 char presseSouris,presseClavier, haut, bas, droite, gauche;
 int anglex, angley, x, y, xold, yold;
 double cam[3];
+GLUquadricObj* pObj;
 /*const GLfloat LightPos1[4] = { 0.0f, 10.0f, 0.0f, 1.0f };
 const GLfloat light_ambient[] = { 0.2f, 0.2f, 0.2f, 1.0f };
 const GLfloat light_diffuse[] = { 0.8f, 0.8f, 0.8f, 1.0f };
@@ -52,13 +53,13 @@ void clavier(unsigned char touche, int x, int y);
 void reshape(int x, int y);
 void idle();
 void vSpecial(int v, int x, int y); 
-void claviermotion(int x, int y);
 void mouse(int bouton, int etat, int x, int y);
 void motion(int x, int y);
 void drawRepere();
 void drawCorps();
 void drawPatte1();
-void OurCylinder(int precis);
+void drawPattesArriere(float x, float y, float z);
+void drawPattesMilieu(float x, float y, float z);
 
 int main(int argc, char** argv)
 {
@@ -70,6 +71,9 @@ int main(int argc, char** argv)
     glutInitWindowPosition(200, 200);
     glutInitWindowSize(500, 500);
     glutCreateWindow("cube");
+
+
+    pObj = gluNewQuadric();
 
     /* Initialisation d'OpenGL */
     /*glEnable(GL_DEPTH_TEST);
@@ -121,20 +125,13 @@ void affichage()
     glLoadIdentity();
     glRotatef(angley, 1.0, 0.0, 0.0);
     glRotatef(anglex, 0.0, 1.0, 0.0);   
-    // Dessin du cube
-    /*
-    for (i = 0; i < 6; i++)
-    {
-        glBegin(GL_POLYGON);
-        for (j = 0; j < 4; j++) {
-            glColor3f(pCube[fCube[i][j]].r, pCube[fCube[i][j]].g, pCube[fCube[i][j]].b);
-            glVertex3f(pCube[fCube[i][j]].x, pCube[fCube[i][j]].y, pCube[fCube[i][j]].z);
-        }
-        glEnd();
-    }*/
+
+    drawPattesMilieu(90, 1.2,0);
+    drawPattesArriere(140, 0.9, 1.5); //DONE 
 
     drawRepere();
-    drawCorps();    
+
+    drawCorps();   
 
     glFlush();
     //glutPostRedisplay();
@@ -186,7 +183,213 @@ void drawRepere()
     glVertex3f(0, 0, 1.0);
     glEnd();
 }
+void drawPattesMilieu(float angle, float ecart, float z)
+{
+    /*
+    Patte milieu gauche
+    */
+    float x = angle; //Angle des pattes
+    float e = ecart; //Ecartement des pattes
+    float depZ = z; //Deplacer en z les pates
 
+    glPushMatrix();
+    glTranslated(-e, 0, depZ);
+    //Pied1
+    glPushMatrix();
+    glRotated(x, 0, 1, 0);
+    glTranslated(0, 0.02, 0.11);
+    glRotated(-40, 1, 0, 0);
+
+    glScalef(0.3f, 0.1f, 1.0f);
+    gluCylinder(pObj, 0.1, 0.1, 0.15, 35, 1);
+    glPopMatrix();
+
+    //Main1
+    glPushMatrix();
+    glRotated(x, 0, 1, 0);
+    glTranslatef(0, 0.12, 0.23);
+    glRotated(-55, 1, 0, 0);
+
+    glScalef(0.3f, 0.1f, 1.0f);
+    gluCylinder(pObj, 0.1, 0.1, 0.4, 35, 1);
+    glPopMatrix();
+
+    //Tibia1
+    glPushMatrix();
+    glRotated(x, 0, 1, 0);
+    glTranslatef(0, 0.45, 0.46);
+    glRotated(-60, 1, 0, 0);
+
+    glScalef(0.3f, 0.2f, 1.0f);
+    gluCylinder(pObj, 0.1, 0.1, 0.4, 35, 1);
+    glPopMatrix();
+
+
+    //Cuisse1
+    glPushMatrix();
+    glRotated(x, 0, 1, 0);
+    glTranslatef(0, 0.78, 0.65);
+    glRotated(30, 1, 0, 0);
+
+    glScalef(0.3f, 0.2f, 1.0f);
+    gluCylinder(pObj, 0.1, 0.1, 0.4, 35, 1);
+    glPopMatrix();
+
+    glPopMatrix();
+
+
+    /*
+    Patte milieu droite
+    */
+
+
+    glPushMatrix();
+    glTranslated(e, 0, depZ);
+
+    //Pied2
+    glPushMatrix();
+    glRotated(-x, 0, 1, 0);
+    glTranslated(0, 0.02, 0.11);
+    glRotated(-40, 1, 0, 0);
+
+    glScalef(0.3f, 0.1f, 1.0f);
+    gluCylinder(pObj, 0.1, 0.1, 0.15, 35, 1);
+    glPopMatrix();
+
+    //Main2
+    glPushMatrix();
+    glRotated(-x, 0, 1, 0);
+    glTranslatef(0, 0.12, 0.23);
+    glRotated(-55, 1, 0, 0);
+
+    glScalef(0.3f, 0.1f, 1.0f);
+    gluCylinder(pObj, 0.1, 0.1, 0.4, 35, 1);
+    glPopMatrix();
+
+    //Tibia2
+    glPushMatrix();
+    glRotated(-x, 0, 1, 0);
+    glTranslatef(0, 0.45, 0.46);
+    glRotated(-60, 1, 0, 0);
+
+    glScalef(0.3f, 0.2f, 1.0f);
+    gluCylinder(pObj, 0.1, 0.1, 0.4, 35, 1);
+    glPopMatrix();
+
+
+    //Cuisse2
+    glPushMatrix();
+    glRotated(-x, 0, 1, 0);
+    glTranslatef(0, 0.78, 0.65);
+    glRotated(30, 1, 0, 0);
+
+    glScalef(0.3f, 0.2f, 1.0f);
+    gluCylinder(pObj, 0.1, 0.1, 0.4, 35, 1);
+    glPopMatrix();
+
+    glPopMatrix();
+}
+void drawPattesArriere(float angle, float ecart, float z)
+{
+    /*
+    Patte arriere gauche
+    */
+    float x = angle; //Angle des pattes
+    float e = ecart; //Ecartement des pattes
+    float depZ = z; //Deplacer en z les pates
+
+    glPushMatrix();
+    glTranslated(-e, 0, depZ);
+    //Pied1
+    glPushMatrix();
+    glRotated(x, 0, 1, 0);
+    glRotated(-30, 1, 0, 0);
+
+    glScalef(0.3f, 0.1f, 1.0f);
+    gluCylinder(pObj, 0.1, 0.1, 0.2, 35, 1);
+    glPopMatrix();
+
+    //Main1
+    glPushMatrix();
+    glRotated(x, 0, 1, 0);
+    glTranslatef(0, 0.08, 0.15);
+    glRotated(-50, 1, 0, 0);
+
+    glScalef(0.3f, 0.1f, 1.0f);
+    gluCylinder(pObj, 0.1, 0.1, 0.5, 35, 1);
+    glPopMatrix();
+
+    //Tibia1
+    glPushMatrix();
+    glRotated(x, 0, 1, 0);
+    glTranslatef(0, 0.45, 0.46);
+    glRotated(-60, 1, 0, 0);
+
+    glScalef(0.3f, 0.2f, 1.0f);
+    gluCylinder(pObj, 0.1, 0.1, 0.5, 35, 1);
+    glPopMatrix();
+
+
+    //Cuisse1
+    glPushMatrix();
+    glRotated(x, 0, 1, 0);
+    glTranslatef(0, 0.88, 0.7);
+    glRotated(40, 1, 0, 0);
+
+    glScalef(0.3f, 0.2f, 1.0f);
+    gluCylinder(pObj, 0.1, 0.1, 0.5, 35, 1);
+    glPopMatrix();
+
+    glPopMatrix();
+
+    /*
+    Pied arriere droite 
+    */
+    glPushMatrix();
+    glTranslated(e,0,depZ);
+
+    //Pied2
+    glPushMatrix();
+    glRotated(-x, 0, 1, 0);
+    glRotated(-30, 1, 0, 0);
+
+    glScalef(0.3f, 0.1f, 1.0f);
+    gluCylinder(pObj, 0.1, 0.1, 0.18, 35, 1);
+    glPopMatrix();
+
+    //Main1
+    glPushMatrix();
+    glRotated(-x, 0, 1, 0);
+    glTranslatef(0, 0.08, 0.15);
+    glRotated(-50, 1, 0, 0);
+
+    glScalef(0.3f, 0.1f, 1.0f);
+    gluCylinder(pObj, 0.1, 0.1, 0.5, 35, 1);
+    glPopMatrix();
+
+    //Tibia2
+    glPushMatrix();
+    glRotated(-x, 0, 1, 0);
+    glTranslatef(0, 0.45, 0.46);
+    glRotated(-60, 1, 0, 0);
+
+    glScalef(0.3f, 0.2f, 1.0f);
+    gluCylinder(pObj, 0.1, 0.1, 0.5, 35, 1);
+    glPopMatrix();
+
+    //Cuisse2
+    glPushMatrix();
+    glRotated(-x, 0, 1, 0);
+    glTranslatef(0, 0.88, 0.7);
+    glRotated(40, 1, 0, 0);
+
+    glScalef(0.3f, 0.2f, 1.0f);
+    gluCylinder(pObj, 0.1, 0.1, 0.5, 35, 1);
+    glPopMatrix();
+    //
+    glPopMatrix();
+}
+//KEYS
 void vSpecial(int key, int x, int y)
 {
     switch (key)
