@@ -41,11 +41,11 @@ char presseSouris,presseClavier, haut, bas, droite, gauche;
 int anglex, angley, x, y, xold, yold;
 double cam[3];
 GLUquadricObj* pObj;
-/*const GLfloat LightPos1[4] = { 0.0f, 10.0f, 0.0f, 1.0f };
+const GLfloat LightPos1[4] = { 0.0f, 10.0f, 0.0f, 1.0f };
 const GLfloat light_ambient[] = { 0.2f, 0.2f, 0.2f, 1.0f };
 const GLfloat light_diffuse[] = { 0.8f, 0.8f, 0.8f, 1.0f };
 const GLfloat light_specular[] = { 1.0f, 1.0f, 1.0f, 1.0f };
-int LightPos2[4] = { 0, -10, 0 ,1 };*/
+int LightPos2[4] = { 0, -10, 0 ,1 };
 
 /* Prototype des fonctions */
 void affichage();
@@ -65,8 +65,12 @@ void drawCorpsTronc();
 void drawCorpsTorse();
 void drawTete();
 void drawCou();
+void drawMandibules();
+void Mandibule();
 void drawOeil(float posX,float posY,float posZ);
 void drawAntenne();
+void mandibuleFace(float y);
+void primitiveCylinder(int n, float high, float largeur);
 
 int main(int argc, char** argv)
 {
@@ -83,13 +87,14 @@ int main(int argc, char** argv)
     pObj = gluNewQuadric();
 
     /* Initialisation d'OpenGL */
-    /*glEnable(GL_DEPTH_TEST);
+    /*
+    glEnable(GL_DEPTH_TEST);
     glEnable(GL_LIGHTING);
     glEnable(GL_LIGHT0);
     glEnable(GL_LIGHT1);
 
     //Lumière
-    glLightfv(GL_LIGHT0, GL_AMBIENT, light_ambient);
+    /*glLightfv(GL_LIGHT0, GL_AMBIENT, light_ambient);
     glLightfv(GL_LIGHT0, GL_DIFFUSE, light_diffuse);
     glLightfv(GL_LIGHT0, GL_SPECULAR, light_specular);
     glLightfv(GL_LIGHT0, GL_POSITION, LightPos1);*/
@@ -131,15 +136,13 @@ void affichage()
     /* Rotation */
     glLoadIdentity();
     glRotatef(angley, 1.0, 0.0, 0.0);
-    glRotatef(anglex, 0.0, 1.0, 0.0);   
+    glRotatef(anglex, 0.0, 1.0, 0.0); 
     glColor3d(255, 255, 255);
-
+    drawMandibules();
     drawPattesDevant(30, 0.6, -1);
     drawPattesMilieu(90.0f, 1.09f, 0.35f);
     drawPattesArriere(150.0f, 0.8f, 1.5f);
   
-
-    drawRepere();
     drawCorps();  
 
     drawCorpsTronc();
@@ -153,10 +156,10 @@ void affichage()
     drawOeil(0.25,0.85,-1.22);
 
     drawOeil(-0.25,0.85,-1.22);
-
     glColor3d(255, 255, 255);
     drawAntenne();
 
+    drawRepere();
     glFlush();
     //glutPostRedisplay();
     //On echange les buffers
@@ -164,6 +167,168 @@ void affichage()
 }
 
 //Drawing
+void drawCorpsTronc()
+{
+    glPushMatrix();
+    glTranslated(0, 0.5, -0.1);
+    glRotated(90, 1, 0, 0);
+    glColor3d(255, 0, 0);
+    primitiveCylinder(50, 1, 0.28);
+    glPopMatrix();
+}
+
+void primitiveCylinder(int n, float high, float largeur)
+{
+
+    for (int i = 0; i < n; i++)
+    {
+        glEnable(GL_TEXTURE_2D);
+        glScalef(1.0, 1.0, 1.0);
+        glBegin(GL_POLYGON);
+
+        glVertex3f((largeur / 2) * cos((i * M_PI) / (n / 2)), 0, (largeur / 2) * sin((i * M_PI) / (n / 2)));
+        glVertex3f((largeur / 2) * cos((i + 1) * M_PI / (n / 2)), 0, (largeur / 2) * sin((i + 1) * M_PI / (n / 2)));
+        glVertex3f((largeur / 2) * cos((i + 1) * M_PI / (n / 2)), high, (largeur / 2) * sin((i + 1) * M_PI / (n / 2)));
+        glVertex3f((largeur / 2) * cos((i * M_PI) / (n / 2)), high, (largeur / 2) * sin(i * M_PI / (n / 2)));
+        glEnd();
+    }
+}
+void drawMandibules()
+{
+    glPushMatrix();
+    glColor3f(165, 42, 42);
+    glTranslated(0.1, 0.65, -1.4);
+    glScalef(0.2, 0.2, 0.4);
+    glRotatef(180, 0, 0, 1);
+    Mandibule();
+    glPopMatrix();
+    
+    glPushMatrix();
+    glTranslated(-0.1, 0.65, -1.4);
+    glScalef(0.2, 0.2, 0.4);
+    Mandibule();
+    glPopMatrix();
+    glColor3d(255, 255, 255);
+}
+void mandibuleFace(float y)
+{
+    int n = 40;
+    /*
+   * PARTIE INFERIEURE
+   */
+    glBegin(GL_POLYGON);
+    /* Main*/
+    glVertex3f(-0.4f, y, 0.0f);
+    glVertex3f(-0.3f, y, 0.4f); //bas
+    glVertex3f(-0.1f, y, 0.4f); //bas
+    glVertex3f(-0.05f, y, 0.0f); //bas
+    /* Doigts*/
+    glVertex3f(0.05f, y, -0.05f);
+    glVertex3f(0.0f, y, -0.15f);
+    glVertex3f(0.1f, y, -0.2f);
+    glVertex3f(0.05f, y, -0.3f);
+    glVertex3f(0.15f, y, -0.35f);
+    glVertex3f(0.15f, y, -0.4f);
+    /* Dos de la main */
+    for (int i = n / 4; i > 0; i--)
+    {
+        float angle = 2 * M_PI * i / n;
+        glVertex3f(-cos(angle) * 0.4, y, -sin(angle) * 0.4);
+    }
+    glEnd();
+}
+void Mandibule()
+{
+    int n = 40;
+    mandibuleFace(0.0);
+    mandibuleFace(0.2);
+    /*
+    * PARTIE CENTRALE
+    */
+    glBegin(GL_QUADS);
+    glVertex3f(-0.4f, 0.0f, 0.0f);
+    glVertex3f(-0.4f, 0.2f, 0.0f);
+    glVertex3f(-0.3f, 0.2f, 0.4f);
+    glVertex3f(-0.3f, 0.0f, 0.4f); //bas
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glVertex3f(-0.1f, 0.0f, 0.4f); //bas
+    glVertex3f(-0.1f, 0.2f, 0.4f);
+    glVertex3f(-0.05f, 0.2f, 0.0f);
+    glVertex3f(-0.05f, 0.0f, 0.0f); //bas
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glVertex3f(-0.3f, 0.0f, 0.4f); //bas
+    glVertex3f(-0.3f, 0.2f, 0.4f);
+    glVertex3f(-0.1f, 0.2f, 0.4f);
+    glVertex3f(-0.1f, 0.0f, 0.4f); //bas
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glVertex3f(-0.05f, 0.0f, 0.0f);
+    glVertex3f(-0.05f, 0.2f, 0.0f);
+    glVertex3f(0.05f, 0.2f, -0.05f);
+    glVertex3f(0.05f, 0.0f, -0.05f);
+    glEnd();
+    /* Doigts */
+    glBegin(GL_QUADS);
+    glVertex3f(0.05f, 0.0f, -0.05f);
+    glVertex3f(0.05f, 0.2f, -0.05f);
+    glVertex3f(0.0f, 0.2f, -0.15f);
+    glVertex3f(0.0f, 0.0f, -0.15f);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glVertex3f(0.0f, 0.0f, -0.15f);
+    glVertex3f(0.0f, 0.2f, -0.15f);
+    glVertex3f(0.1f, 0.2f, -0.2f);
+    glVertex3f(0.1f, 0.0f, -0.2f);
+    glEnd();
+
+    glBegin(GL_QUADS);
+
+    glVertex3f(0.1f, 0.0f, -0.2f);
+    glVertex3f(0.1f, 0.2f, -0.2f);
+    glVertex3f(0.05f, 0.2f, -0.3f);
+    glVertex3f(0.05f, 0.0f, -0.3f);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glVertex3f(0.05f, 0.0f, -0.3f);
+    glVertex3f(0.05f, 0.2f, -0.3f);
+    glVertex3f(0.15f, 0.2f, -0.35f);
+    glVertex3f(0.15f, 0.0f, -0.35f);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glVertex3f(0.15f, 0.0f, -0.35f);
+    glVertex3f(0.15f, 0.2f, -0.35f);
+    glVertex3f(0.15f, 0.2f, -0.4f);
+    glVertex3f(0.15f, 0.0f, -0.4f);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glVertex3f(0.15f, 0.0f, -0.4f);
+    glVertex3f(0.15f, 0.2f, -0.4f);
+    glVertex3f(-cos(2 * M_PI * 10 / n) * 0.4, 0.2, -sin(2 * M_PI * 10 / n) * 0.4);
+    glVertex3f(-cos(2 * M_PI * 10 / n) * 0.4, 0.0, -sin(2 * M_PI * 10 / n) * 0.4);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    for (int i = n / 4; i > 0; i--)
+    {
+        float angle = 2 * M_PI * i / n;
+        float angle2 = 2 * M_PI * (i-1) / n;
+        glBegin(GL_QUADS);
+        glVertex3f(-cos(angle) * 0.4, 0.0, -sin(angle) * 0.4);
+        glVertex3f(-cos(angle) * 0.4, 0.2, -sin(angle) * 0.4);
+        glVertex3f(-cos(angle2) * 0.4, 0.2, -sin(angle2) * 0.4);
+        glVertex3f(-cos(angle2) * 0.4, 0.0, -sin(angle2) * 0.4);
+
+    }glEnd();
+}
 
 void drawCorps()
 {
@@ -173,17 +338,6 @@ void drawCorps()
     glColor3d(255, 0, 255);
     glScalef(1.0f, 1.0f, 1.75f);
     glutSolidSphere(0.35, 30, 30);
-    glPopMatrix();
-}
-
-void drawCorpsTronc()
-{
-    glPushMatrix();
-    glTranslated(0, 0.5, 0.35);
-    glRotated(0, 0, 0, 0);
-    glColor3d(255, 0, 0);
-    glScalef(0.5f, 0.5f, 2.0f);
-    glutSolidSphere(0.25, 30, 30);
     glPopMatrix();
 }
 
@@ -627,27 +781,32 @@ void vSpecial(int key, int x, int y)
 {
     switch (key)
     {
-    case GLUT_KEY_UP:
-        angley = angley - 5;
-        glutPostRedisplay();
-        break;
+        case GLUT_KEY_UP:
+        {
+            angley = (angley - 5) % 360;
+            break;
+        }
 
-    case GLUT_KEY_DOWN:
-        angley = angley + 5;
-        glutPostRedisplay();
-        break;
+        case GLUT_KEY_DOWN:
+        {
+            angley = (angley + 5) % 360;
+            break;
+        }
 
-    case GLUT_KEY_LEFT:
-        anglex = anglex + 5;
-        glutPostRedisplay();
-        break;
+        case GLUT_KEY_LEFT:
+        {
+            anglex = (anglex + 5) % 360;
+            break;
+        }
 
-    case GLUT_KEY_RIGHT:
-        anglex = anglex -5;
-        glutPostRedisplay();
-
-        break;
+        case GLUT_KEY_RIGHT:
+        {
+            anglex = (anglex - 5) %360;
+            break;
+        }
+        default: break;
     }
+    glutPostRedisplay();
 }
 
 
