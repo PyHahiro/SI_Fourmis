@@ -149,6 +149,9 @@
   <ItemGroup>
     <ClInclude Include="stb_image.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="Cuir.jpg" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

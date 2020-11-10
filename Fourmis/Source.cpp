@@ -1,14 +1,17 @@
 #define STB_IMAGE_IMPLEMENTATION
 #define M_PI           3.14159265358979323846
 #include <windows.h>
-#include <GL/glut.h>
+#include <GL/freeglut.h>
+#include <cstdio>
+#include <cstdlib>
 #include <stdlib.h>
 #include "stb_image.h"
+#include <iostream>
 
 /*class Point*/
 class Point {
 public:
-    //coordonnées x, y et z du point
+    //coordonnï¿½es x, y et z du point
     double x;
     double y;
     double z;
@@ -46,6 +49,10 @@ const GLfloat light_ambient[] = { 0.2f, 0.2f, 0.2f, 1.0f };
 const GLfloat light_diffuse[] = { 0.8f, 0.8f, 0.8f, 1.0f };
 const GLfloat light_specular[] = { 1.0f, 1.0f, 1.0f, 1.0f };
 int LightPos2[4] = { 0, -10, 0 ,1 };
+int width;
+int height;
+unsigned char* Image;
+
 
 /* Prototype des fonctions */
 void affichage();
@@ -71,10 +78,12 @@ void drawOeil(float posX,float posY,float posZ);
 void drawAntenne();
 void mandibuleFace(float y);
 void primitiveCylinder(int n, float high, float largeur);
+unsigned char* loadJpegImage(const char* fichier, int* width, int* height);
+
 
 int main(int argc, char** argv)
 {
-    cam[0] = 5; cam[1] = 1; cam[2] = 5;
+    cam[0] = 0; cam[1] = 1; cam[2] = -5;
     /* initialisation de glut et creation
        de la fenetre */
     glutInit(&argc, argv);
@@ -83,6 +92,7 @@ int main(int argc, char** argv)
     glutInitWindowSize(500, 500);
     glutCreateWindow("Fourmis");
 
+    unsigned char* Image = loadJpegImage("Cuir2.jpg", &width, &height);
 
     pObj = gluNewQuadric();
 
@@ -93,7 +103,7 @@ int main(int argc, char** argv)
     glEnable(GL_LIGHT0);
     glEnable(GL_LIGHT1);
 
-    //Lumière
+    //Lumiï¿½re
     /*glLightfv(GL_LIGHT0, GL_AMBIENT, light_ambient);
     glLightfv(GL_LIGHT0, GL_DIFFUSE, light_diffuse);
     glLightfv(GL_LIGHT0, GL_SPECULAR, light_specular);
@@ -108,6 +118,11 @@ int main(int argc, char** argv)
     glColor3f(1.0, 1.0, 1.0);
     glPointSize(2.0);
     glEnable(GL_DEPTH_TEST);
+
+
+    /* Parametre de texture */
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width/5, height/5, 0,
+        GL_RGB, GL_UNSIGNED_BYTE, Image);
 
     /* enregistrement des fonctions de rappel */
     glutDisplayFunc(affichage);
@@ -172,23 +187,32 @@ void drawCorpsTronc()
     glPushMatrix();
     glTranslated(0, 0.5, -0.1);
     glRotated(90, 1, 0, 0);
-    glColor3d(255, 0, 0);
-    primitiveCylinder(50, 1, 0.28);
+    glColor3f(1, 1, 1);
+    glClearColor(0, 0, 0, 1);
+    glEnable(GL_TEXTURE_2D);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
+    primitiveCylinder(6, 1, 0.28);
+    glDisable(GL_TEXTURE_2D);
     glPopMatrix();
 }
 
 void primitiveCylinder(int n, float high, float largeur)
 {
-
     for (int i = 0; i < n; i++)
     {
-        glEnable(GL_TEXTURE_2D);
         glScalef(1.0, 1.0, 1.0);
         glBegin(GL_POLYGON);
-
+        glTexCoord2f(0.0, 1.0);
         glVertex3f((largeur / 2) * cos((i * M_PI) / (n / 2)), 0, (largeur / 2) * sin((i * M_PI) / (n / 2)));
+        glTexCoord2f(1.0, 1.0);
         glVertex3f((largeur / 2) * cos((i + 1) * M_PI / (n / 2)), 0, (largeur / 2) * sin((i + 1) * M_PI / (n / 2)));
+        glTexCoord2f(1.0, 0.0);
         glVertex3f((largeur / 2) * cos((i + 1) * M_PI / (n / 2)), high, (largeur / 2) * sin((i + 1) * M_PI / (n / 2)));
+        glTexCoord2f(0.0, 0.0);
         glVertex3f((largeur / 2) * cos((i * M_PI) / (n / 2)), high, (largeur / 2) * sin(i * M_PI / (n / 2)));
         glEnd();
     }
@@ -776,6 +800,8 @@ void drawPattesArriere(float angle, float ecart, float z)
     //
     glPopMatrix();
 }
+
+
 //KEYS
 void vSpecial(int key, int x, int y)
 {
@@ -895,4 +921,20 @@ void motion(int x, int y)
 
     xold = x; /* sauvegarde des valeurs courante de le position de la souris */
     yold = y;
+}
+
+unsigned char* loadJpegImage(const char* fichier, int* width, int* height)
+{
+    int bpp;
+    unsigned char* image = stbi_load(fichier, width, height, &bpp, 3);
+    if (image == nullptr)
+    {
+        std::cout << "Erreur, impossible de charger l'image " << fichier << std::endl;
+    }
+    else
+    {
+        std::cout << "Texture chargee: " << fichier << std::endl;
+    }
+
+    return image;
 }

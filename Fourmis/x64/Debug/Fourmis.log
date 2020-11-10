@@ -1,22 +1,59 @@
 ﻿  Source.cpp
-D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(132,15): warning C4244: 'argument' : conversion de 'int' en 'GLfloat', perte possible de données
-D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(133,15): warning C4244: 'argument' : conversion de 'int' en 'GLfloat', perte possible de données
-D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(135,34): warning C4305: 'argument' : troncation de 'double' à 'float'
-D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(136,36): warning C4305: 'argument' : troncation de 'double' à 'float'
-D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(150,29): warning C4305: 'argument' : troncation de 'double' à 'float'
-D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(152,30): warning C4305: 'argument' : troncation de 'double' à 'float'
-D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(124,12): warning C4101: 'j' : variable locale non référencée
-D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(124,9): warning C4101: 'i' : variable locale non référencée
-D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(321,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(331,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(342,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(373,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(383,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(394,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(426,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(436,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(447,30): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(474,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(484,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(494,30): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(153,15): warning C4244: 'argument' : conversion de 'int' en 'GLfloat', perte possible de données
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(154,15): warning C4244: 'argument' : conversion de 'int' en 'GLfloat', perte possible de données
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(157,33): warning C4305: 'argument' : troncation de 'double' à 'float'
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(171,29): warning C4305: 'argument' : troncation de 'double' à 'float'
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(173,30): warning C4305: 'argument' : troncation de 'double' à 'float'
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(145,12): warning C4101: 'j' : variable locale non référencée
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(145,9): warning C4101: 'i' : variable locale non référencée
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(198,33): warning C4305: 'argument' : troncation de 'double' à 'float'
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(210,80): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(210,34): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(212,84): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(212,34): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(214,87): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(214,34): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(216,83): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(216,34): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(225,27): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(232,27): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(259,21): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(260,54): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(260,32): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(268,22): warning C4305: 'argument' : troncation de 'double' à 'float'
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(339,76): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(339,81): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(339,40): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(340,76): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(340,40): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(346,21): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(347,22): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(349,56): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(349,32): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(350,56): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(350,61): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(350,32): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(351,58): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(351,63): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(351,33): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(352,58): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(352,33): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(517,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(527,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(538,30): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(568,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(578,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(589,30): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(621,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(631,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(642,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(673,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(683,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(694,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(726,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(736,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(747,30): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(774,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(784,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(794,30): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
   Fourmis.vcxproj -> D:\Document\prog\Fourmi\SI_Fourmis\x64\Debug\Fourmis.exe
