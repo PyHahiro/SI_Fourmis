@@ -121,7 +121,7 @@ int main(int argc, char** argv)
 
 
     /* Parametre de texture */
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width/5, height/5, 0,
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width/10, height/2, 0,
         GL_RGB, GL_UNSIGNED_BYTE, Image);
 
     /* enregistrement des fonctions de rappel */
@@ -192,8 +192,8 @@ void drawCorpsTronc()
     glEnable(GL_TEXTURE_2D);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    //glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    //glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
     glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
     primitiveCylinder(6, 1, 0.28);
     glDisable(GL_TEXTURE_2D);
@@ -204,17 +204,34 @@ void primitiveCylinder(int n, float high, float largeur)
 {
     for (int i = 0; i < n; i++)
     {
-        glScalef(1.0, 1.0, 1.0);
-        glBegin(GL_POLYGON);
-        glTexCoord2f(0.0, 1.0);
-        glVertex3f((largeur / 2) * cos((i * M_PI) / (n / 2)), 0, (largeur / 2) * sin((i * M_PI) / (n / 2)));
-        glTexCoord2f(1.0, 1.0);
-        glVertex3f((largeur / 2) * cos((i + 1) * M_PI / (n / 2)), 0, (largeur / 2) * sin((i + 1) * M_PI / (n / 2)));
-        glTexCoord2f(1.0, 0.0);
-        glVertex3f((largeur / 2) * cos((i + 1) * M_PI / (n / 2)), high, (largeur / 2) * sin((i + 1) * M_PI / (n / 2)));
-        glTexCoord2f(0.0, 0.0);
-        glVertex3f((largeur / 2) * cos((i * M_PI) / (n / 2)), high, (largeur / 2) * sin(i * M_PI / (n / 2)));
-        glEnd();
+        if (i < 1)
+        {
+            glScalef(1.0, 1.0, 1.0);
+            glBegin(GL_POLYGON);
+            glTexCoord2f(0.0, 1);
+            glVertex3f((largeur / 2) * cos((i * M_PI) / (n / 2)), 0, (largeur / 2) * sin((i * M_PI) / (n / 2)));
+            glTexCoord2f(1.0, 1.0);
+            glVertex3f((largeur / 2) * cos((i + 1) * M_PI / (n / 2)), 0, (largeur / 2) * sin((i + 1) * M_PI / (n / 2)));
+            glTexCoord2f(1, 0 );
+            glVertex3f((largeur / 2) * cos((i + 1) * M_PI / (n / 2)), high, (largeur / 2) * sin((i + 1) * M_PI / (n / 2)));
+            glTexCoord2f(0.0, 0.0);
+            glVertex3f((largeur / 2) * cos((i * M_PI) / (n / 2)), high, (largeur / 2) * sin(i * M_PI / (n / 2)));
+            glEnd();
+        }
+        else
+        {
+            glScalef(1.0, 1.0, 1.0);
+            glBegin(GL_POLYGON);
+            glTexCoord2f((i-1)/(n-1), (i)/(n-1));
+            glVertex3f((largeur / 2) * cos((i * M_PI) / (n / 2)), 0, (largeur / 2) * sin((i * M_PI) / (n / 2)));
+            glTexCoord2f((i) / (n - 1), (i) / (n - 1));
+            glVertex3f((largeur / 2) * cos((i + 1) * M_PI / (n / 2)), 0, (largeur / 2) * sin((i + 1) * M_PI / (n / 2)));
+            glTexCoord2f((i) / (n - 1), (i - 1) / (n - 1));
+            glVertex3f((largeur / 2) * cos((i + 1) * M_PI / (n / 2)), high, (largeur / 2) * sin((i + 1) * M_PI / (n / 2)));
+            glTexCoord2f((i - 1) / (n - 1), (i - 1) / (n - 1));
+            glVertex3f((largeur / 2) * cos((i * M_PI) / (n / 2)), high, (largeur / 2) * sin(i * M_PI / (n / 2)));
+            glEnd();
+        }
     }
 }
 void drawMandibules()
