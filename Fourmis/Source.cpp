@@ -45,10 +45,11 @@ int anglex, angley, x, y, xold, yold;
 double cam[3];
 GLUquadricObj* pObj;
 const GLfloat LightPos1[4] = { 0.0f, 10.0f, 0.0f, 1.0f };
-const GLfloat light_ambient[] = { 0.2f, 0.2f, 0.2f, 1.0f };
-const GLfloat light_diffuse[] = { 0.8f, 0.8f, 0.8f, 1.0f };
-const GLfloat light_specular[] = { 1.0f, 1.0f, 1.0f, 1.0f };
-int LightPos2[4] = { 0, -10, 0 ,1 };
+const GLfloat light_ambient[] = { 1.0f, 0.2f, 0.2f, 1.0f };
+const GLfloat light_diffuse[] = { 0.2f, 0.8f, 0.8f, 1.0f };
+const GLfloat light_specular[] = { 0.5f, 1.0f, 1.0f, 1.0f };
+const GLfloat LightPos2[4] = { 0.0f, -10.0f, 0.0f ,1.0f };
+const GLfloat light_diffuse2[] = { 0.0f , 0.5f, 0.0f, 1.0 };
 int width;
 int height;
 unsigned char* Image;
@@ -68,7 +69,7 @@ void drawPatte1();
 void drawPattesDevant(float x, float y, float z);
 void drawPattesMilieu(float x, float y, float z);
 void drawPattesArriere(float x, float y, float z);
-void drawCorpsTronc();
+void drawCorpsTronc(int n);
 void drawCorpsTorse();
 void drawTete();
 void drawCou();
@@ -97,17 +98,18 @@ int main(int argc, char** argv)
     pObj = gluNewQuadric();
 
     /* Initialisation d'OpenGL */
-    /*
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_LIGHTING);
     glEnable(GL_LIGHT0);
     glEnable(GL_LIGHT1);
 
     //Lumi�re
-    /*glLightfv(GL_LIGHT0, GL_AMBIENT, light_ambient);
+    glLightfv(GL_LIGHT0, GL_POSITION, LightPos1);
+    glLightfv(GL_LIGHT0, GL_AMBIENT, light_ambient);
     glLightfv(GL_LIGHT0, GL_DIFFUSE, light_diffuse);
     glLightfv(GL_LIGHT0, GL_SPECULAR, light_specular);
-    glLightfv(GL_LIGHT0, GL_POSITION, LightPos1);*/
+    glLightfv(GL_LIGHT1, GL_DIFFUSE, light_diffuse2);
+    
 
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
@@ -117,7 +119,6 @@ int main(int argc, char** argv)
     glClearColor(0.0, 0.0, 0.0, 0.0);
     glColor3f(1.0, 1.0, 1.0);
     glPointSize(2.0);
-    glEnable(GL_DEPTH_TEST);
 
 
     /* Parametre de texture */
@@ -160,7 +161,7 @@ void affichage()
   
     drawCorps();  
 
-    drawCorpsTronc();
+    drawCorpsTronc(8);
 
     drawCorpsTorse();
 
@@ -182,7 +183,7 @@ void affichage()
 }
 
 //Drawing
-void drawCorpsTronc()
+void drawCorpsTronc(int n)
 {
     glPushMatrix();
     glTranslated(0, 0.5, -0.1);
@@ -193,7 +194,7 @@ void drawCorpsTronc()
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
     glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
-    primitiveCylinder(6, 1, 0.28);
+    primitiveCylinder(n, 1, 0.28);
     glDisable(GL_TEXTURE_2D);
     glPopMatrix();
 }
