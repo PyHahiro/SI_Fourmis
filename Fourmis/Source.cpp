@@ -45,10 +45,11 @@ int anglex, angley, x, y, xold, yold;
 double cam[3];
 GLUquadricObj* pObj;
 const GLfloat LightPos1[4] = { 0.0f, 10.0f, 0.0f, 1.0f };
-const GLfloat light_ambient[] = { 1.0f, 0.2f, 0.2f, 1.0f };
-const GLfloat light_diffuse[] = { 0.2f, 0.8f, 0.8f, 1.0f };
+const GLfloat light_ambient[] = { 0.5f, 0.2f, 0.2f, 1.0f };
+const GLfloat light_diffuse[] = { 1.0f, 1.0f, 1.0f, 1.0f };
 const GLfloat light_specular[] = { 0.5f, 1.0f, 1.0f, 1.0f };
-const GLfloat LightPos2[4] = { 0.0f, -10.0f, 0.0f ,1.0f };
+const GLfloat light_direction[] = { 0.0f, 0.0f, 0.0f};
+const GLfloat lightPos2[4] = { 0.0f, -10.0f, 0.0f ,1.0f };
 const GLfloat light_diffuse2[] = { 0.0f , 0.5f, 0.0f, 1.0 };
 int width;
 int height;
@@ -99,16 +100,21 @@ int main(int argc, char** argv)
 
     /* Initialisation d'OpenGL */
     glEnable(GL_DEPTH_TEST);
+    glEnable(GL_NORMALIZE);
     glEnable(GL_LIGHTING);
     glEnable(GL_LIGHT0);
     glEnable(GL_LIGHT1);
 
-    //Lumi�re
+    //Lumi�re1
     glLightfv(GL_LIGHT0, GL_POSITION, LightPos1);
     glLightfv(GL_LIGHT0, GL_AMBIENT, light_ambient);
     glLightfv(GL_LIGHT0, GL_DIFFUSE, light_diffuse);
     glLightfv(GL_LIGHT0, GL_SPECULAR, light_specular);
+    glLightfv(GL_LIGHT0, GL_SPOT_DIRECTION, light_direction);
+
+    //lumiere2
     glLightfv(GL_LIGHT1, GL_DIFFUSE, light_diffuse2);
+    glLightfv(GL_LIGHT1, GL_POSITION, lightPos2);
     
 
     glMatrixMode(GL_PROJECTION);
@@ -193,7 +199,7 @@ void drawCorpsTronc(int n)
     glEnable(GL_TEXTURE_2D);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-    glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
+    glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE,GL_REPLACE);
     primitiveCylinder(n, 1, 0.28);
     glDisable(GL_TEXTURE_2D);
     glPopMatrix();
