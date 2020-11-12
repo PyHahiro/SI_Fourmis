@@ -202,7 +202,7 @@ void primitiveCylinder(int n, float high, float largeur)
 {
     for (int i = 0; i < n; i++)
     {
-        if (i < 1)
+        if (i == 5)
         {
             glScalef(1.0, 1.0, 1.0);
             glBegin(GL_POLYGON);
@@ -220,13 +220,13 @@ void primitiveCylinder(int n, float high, float largeur)
         {
             glScalef(1.0, 1.0, 1.0);
             glBegin(GL_POLYGON);
-            glTexCoord2f((i-1)/(n-1), 1.0);
+            glTexCoord2f((float)i/n, 1.0);
             glVertex3f((largeur / 2) * cos((i * M_PI) / (n / 2)), 0, (largeur / 2) * sin((i * M_PI) / (n / 2)));
-            glTexCoord2f((i) / (n - 1), 1.0);
+            glTexCoord2f((float)(i+1) / n, 1.0);
             glVertex3f((largeur / 2) * cos((i + 1) * M_PI / (n / 2)), 0, (largeur / 2) * sin((i + 1) * M_PI / (n / 2)));
-            glTexCoord2f((i) / (n - 1), 0.0);
+            glTexCoord2f((float)(i+1) / n, 0.0);
             glVertex3f((largeur / 2) * cos((i + 1) * M_PI / (n / 2)), high, (largeur / 2) * sin((i + 1) * M_PI / (n / 2)));
-            glTexCoord2f((i - 1) / (n - 1), 0.0);
+            glTexCoord2f((float)i / n, 0.0);
             glVertex3f((largeur / 2) * cos((i * M_PI) / (n / 2)), high, (largeur / 2) * sin(i * M_PI / (n / 2)));
             glEnd();
         }
@@ -876,8 +876,15 @@ void clavier(unsigned char touche, int x, int y)
         glutPostRedisplay();
         break;
     case 'z':
-        cam[0] = cam[0]-0.1;
-        cam[2] = cam[2]-0.1;
+        if (cam[0] <= 0.1 && cam[0] >= -0.1)
+            cam[2] = cam[2] - 0.1;
+        else if (cam[2] <= 0.1 && cam[2] >= -0.1)
+            cam[0] = cam[0] - 0.1;
+        else
+        {
+            cam[0] = cam[0] - 0.1;
+            cam[2] = cam[2] - 0.1;
+        }
         glMatrixMode(GL_PROJECTION);
         glLoadIdentity();
         gluPerspective(45.0, 1, 0.1, 100.0);
@@ -885,8 +892,15 @@ void clavier(unsigned char touche, int x, int y)
         glutPostRedisplay();
         break;
     case 'Z':
-        cam[0] = cam[0]+0.1;
-        cam[2] = cam[2]+0.1;
+        if(cam[0] <= 0.1 && cam[0] >= -0.1)
+            cam[2] = cam[2] + 0.1;
+        else if (cam[2] <= 0.1 && cam[2] >= -0.1)
+            cam[0] = cam[0] + 0.1;
+        else
+        {
+            cam[0] = cam[0] + 0.1;
+            cam[2] = cam[2] + 0.1;
+        }
         glMatrixMode(GL_PROJECTION);
         glLoadIdentity();
         gluPerspective(45.0, 1, 0.1, 100.0);

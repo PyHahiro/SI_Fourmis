@@ -15,16 +15,12 @@ D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(214,91): warning C4244: 'a
 D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(214,38): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
 D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(216,87): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
 D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(216,38): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
-D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(223,31): warning C4244: 'argument' : conversion de 'int' en 'GLfloat', perte possible de données
 D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(224,84): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
 D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(224,38): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
-D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(225,30): warning C4244: 'argument' : conversion de 'int' en 'GLfloat', perte possible de données
 D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(226,88): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
 D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(226,38): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
-D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(227,30): warning C4244: 'argument' : conversion de 'int' en 'GLfloat', perte possible de données
 D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(228,91): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
 D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(228,38): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
-D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(229,34): warning C4244: 'argument' : conversion de 'int' en 'GLfloat', perte possible de données
 D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(230,87): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
 D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(230,38): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
 D:\Document\prog\Fourmi\SI_Fourmis\Fourmis\Source.cpp(240,27): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
