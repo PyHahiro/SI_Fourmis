@@ -46,11 +46,17 @@ float mandibuleANIM = 10;
 float Avant_xG = 10; float Avant_xD = 80;
 float Milieu_xG = 0; float Milieu_xD = 0;
 float Arriere_xG = 70; float Arriere_xD = 0;
-boolean Avant = true;
-boolean Milieu = true;
-boolean Arriere = true;
+float Antenne = 0;
+float Fessier = 0;
+float DG = 0;
+boolean DGB = true;
+boolean Fesse = true;
+boolean Antennes = true;
+boolean Avant = false;
+boolean Milieu = false;
+boolean Arriere = false;
 boolean trigo = true;
-boolean pattes = true;
+boolean pattes = false;
 double cam[3];
 GLUquadricObj* pObj;
 const GLfloat LightPos1[4] = { 0.0f, 10.0f, 0.0f, 1.0f };
@@ -168,52 +174,75 @@ void Anim()
 
     if (trigo)
     {
-        mandibuleANIM += 0.1;
+        mandibuleANIM += 0.2;
     }
     else
     {
-        mandibuleANIM -= 0.1;
+        mandibuleANIM -= 0.2;
     }
+
+    if (Antenne > 5 || Antenne < -5)
+        Antennes = !Antennes;
+
+    if (Antennes)
+        Antenne += 0.1;
+    else
+        Antenne -= 0.1;
+
 
     if (pattes)
     {
+        if (Fessier > 10 || Fessier < 0)
+            Fesse = !Fesse;
+        if (Fesse)
+            Fessier += 0.05;
+        else
+            Fessier -= 0.05;
+
+        if (DG > 10 || DG < -10)
+            DGB = !DGB;
+        if (DGB)
+            DG += 0.05;
+        else
+            DG -= 0.05;
+
         if (Avant_xG > 80 || Avant_xG < 10)
             Avant = !Avant;
         if (Avant)
         {
-            Avant_xG += 0.1;
-            Avant_xD -= 0.1;
+            Avant_xG += 0.2;
+            Avant_xD -= 0.2;
         }
         else
         {
-            Avant_xG -= 0.1;
-            Avant_xD += 0.1;
+            Avant_xG -= 0.2;
+            Avant_xD += 0.2;
         }
 
         if (Milieu_xG > 20 || Milieu_xG < -20)
             Milieu = !Milieu;
         if (Milieu)
         {
-            Milieu_xG += 0.05;
-            Milieu_xD -= 0.05;
+            Milieu_xG += 0.12;
+            Milieu_xD -= 0.12;
         }
         else
         {
-            Milieu_xG -= 0.05;
-            Milieu_xD += 0.05;
+            Milieu_xG -= 0.12;
+            Milieu_xD += 0.12;
         }
 
         if (Arriere_xG > 70 || Arriere_xG < 0)
             Arriere  = !Arriere;
         if (Arriere)
         {
-            Arriere_xG += 0.1;
-            Arriere_xD -= 0.1;
+            Arriere_xG += 0.2;
+            Arriere_xD -= 0.2;
         }
         else
         {
-            Arriere_xG -= 0.1;
-            Arriere_xD += 0.1;
+            Arriere_xG -= 0.2;
+            Arriere_xD += 0.2;
         }
 
     }
@@ -233,10 +262,7 @@ void affichage()
     glLoadIdentity();
     glRotatef(angley, 1.0, 0.0, 0.0);
     glRotatef(anglex, 0.0, 1.0, 0.0); 
-
-
-    glColor3d(255, 255, 255);
-    drawMandibules(mandibuleANIM);
+    
 
     //Patte AVANT droite
     glPushMatrix();
@@ -307,8 +333,12 @@ void affichage()
 
     drawCorpsTronc(8);
 
-    drawCorpsTorse();
+    glPushMatrix();
+    glRotatef(DG, 0, 1, 0);
 
+    drawCorpsTorse();
+    glPushMatrix();
+    glRotatef(DG, 0, 1, 0);
     drawTete();
 
     drawCou();
@@ -316,8 +346,12 @@ void affichage()
     drawOeil(0.25,0.85,-1.22);
 
     drawOeil(-0.25,0.85,-1.22);
-    glColor3d(255, 255, 255);
+
     drawAntenne();
+
+    drawMandibules(mandibuleANIM);
+    glPopMatrix();
+    glPopMatrix();
 
     drawRepere();
     glFlush();
@@ -517,7 +551,9 @@ void Mandibule()
 void drawCorps()
 {
     glPushMatrix();
+    glRotatef(-Fessier, 1, 0, 0);
     glTranslatef(0, 0.5, 1);
+
     glRotatef(-15, 1, 0, 0);
     glColor3d(255, 0, 255);
     glScalef(1.0f, 1.0f, 1.75f);
@@ -574,15 +610,18 @@ void drawAntenne()
     */
 
     glPushMatrix();
+    glTranslatef(-0.5, 1.05, -1.1);
 
-    glTranslatef(-0.5, 1.1, -1.1);
     glPushMatrix();
     glRotatef(120, 0, 1, 0);
+
     glRotatef(30, 1, 0, 0);
     gluCylinder(pObj, 0.02, 0.02, 0.5,30,30);
     glPopMatrix();
 
+
     glPushMatrix();
+    glRotatef(Antenne, 1, 0, 0);
     glRotatef(170, 0, 1, 0);
 
     glScalef(0.75, 0.75, 0.75);
@@ -590,7 +629,7 @@ void drawAntenne()
     glPopMatrix();
 
     glPushMatrix();
-    glTranslatef(0.095, 0.005, -0.56);
+    glTranslatef(0.095, 0.005+ (Antenne/100), -0.56);
     glRotatef(-15, 1, 0, 0);
     glRotatef(170, 0, 1, 0);
     glScaled(0.5, 0.5, 0.5);
@@ -604,7 +643,7 @@ void drawAntenne()
     */
     glPushMatrix();
 
-    glTranslatef(0.5, 1.1, -1.1);
+    glTranslatef(0.5, 1.05, -1.1);
     glPushMatrix();
     glRotatef(-120, 0, 1, 0);
     glRotatef(30, 1, 0, 0);
@@ -612,14 +651,15 @@ void drawAntenne()
     glPopMatrix();
 
     glPushMatrix();
+    glRotatef(Antenne, 1, 0, 0);
     glRotatef(-170, 0, 1, 0);
     glScaled(0.75, 0.75, 0.75);
     gluCylinder(pObj, 0.02, 0.02, 0.8, 30, 30);
     glPopMatrix();
 
     glPushMatrix();
-    glTranslatef(-0.1,0.005,-0.53);
-    glRotatef(-5, 1, 0, 0);
+    glTranslatef(-0.1,0.005+ (Antenne / 100),-0.53);
+    glRotatef(-5 , 1, 0, 0);
     glRotatef(-170, 0, 1, 0);
     glScaled(0.5, 0.5, 0.5);
     gluCylinder(pObj, 0.02, 0.02, 0.8, 30, 30);
