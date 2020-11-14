@@ -1,99 +1,99 @@
 ﻿  Source.cpp
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(177,29): warning C4305: '+=' : troncation de 'double' à 'float'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(181,29): warning C4305: '-=' : troncation de 'double' à 'float'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(188,23): warning C4305: '+=' : troncation de 'double' à 'float'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(190,23): warning C4305: '-=' : troncation de 'double' à 'float'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(198,28): warning C4305: '+=' : troncation de 'double' à 'float'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(200,28): warning C4305: '-=' : troncation de 'double' à 'float'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(205,23): warning C4305: '+=' : troncation de 'double' à 'float'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(207,23): warning C4305: '-=' : troncation de 'double' à 'float'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(213,28): warning C4305: '+=' : troncation de 'double' à 'float'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(214,28): warning C4305: '-=' : troncation de 'double' à 'float'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(181,29): warning C4305: '+=' : troncation de 'double' à 'float'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(185,29): warning C4305: '-=' : troncation de 'double' à 'float'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(192,23): warning C4305: '+=' : troncation de 'double' à 'float'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(194,23): warning C4305: '-=' : troncation de 'double' à 'float'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(202,28): warning C4305: '+=' : troncation de 'double' à 'float'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(204,28): warning C4305: '-=' : troncation de 'double' à 'float'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(209,23): warning C4305: '+=' : troncation de 'double' à 'float'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(211,23): warning C4305: '-=' : troncation de 'double' à 'float'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(217,28): warning C4305: '+=' : troncation de 'double' à 'float'
 C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(218,28): warning C4305: '-=' : troncation de 'double' à 'float'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(219,28): warning C4305: '+=' : troncation de 'double' à 'float'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(226,30): warning C4305: '+=' : troncation de 'double' à 'float'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(227,30): warning C4305: '-=' : troncation de 'double' à 'float'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(222,28): warning C4305: '-=' : troncation de 'double' à 'float'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(223,28): warning C4305: '+=' : troncation de 'double' à 'float'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(230,30): warning C4305: '+=' : troncation de 'double' à 'float'
 C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(231,30): warning C4305: '-=' : troncation de 'double' à 'float'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(232,30): warning C4305: '+=' : troncation de 'double' à 'float'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(239,30): warning C4305: '+=' : troncation de 'double' à 'float'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(240,30): warning C4305: '-=' : troncation de 'double' à 'float'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(235,30): warning C4305: '-=' : troncation de 'double' à 'float'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(236,30): warning C4305: '+=' : troncation de 'double' à 'float'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(243,30): warning C4305: '+=' : troncation de 'double' à 'float'
 C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(244,30): warning C4305: '-=' : troncation de 'double' à 'float'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(245,30): warning C4305: '+=' : troncation de 'double' à 'float'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(263,15): warning C4244: 'argument' : conversion de 'int' en 'GLfloat', perte possible de données
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(264,15): warning C4244: 'argument' : conversion de 'int' en 'GLfloat', perte possible de données
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(270,30): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(272,30): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(281,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(283,32): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(291,30): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(301,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(313,30): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(316,28): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(324,29): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(326,28): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(346,29): warning C4305: 'argument' : troncation de 'double' à 'float'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(348,30): warning C4305: 'argument' : troncation de 'double' à 'float'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(255,12): warning C4101: 'j' : variable locale non référencée
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(255,9): warning C4101: 'i' : variable locale non référencée
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(375,33): warning C4305: 'argument' : troncation de 'double' à 'float'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(389,84): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(389,38): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(391,88): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(391,38): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(393,91): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(393,38): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(395,87): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(395,38): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(403,84): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(403,38): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(405,88): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(405,38): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(407,91): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(407,38): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(409,87): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(409,38): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(417,33): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(418,27): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(425,35): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(426,27): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(453,21): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(454,54): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(454,32): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(462,22): warning C4305: 'argument' : troncation de 'double' à 'float'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(533,76): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(533,81): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(533,40): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(534,76): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(534,40): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(540,21): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(541,22): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(543,56): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(543,32): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(544,56): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(544,61): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(544,32): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(545,58): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(545,63): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(545,33): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(546,58): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(546,33): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(578,29): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(599,32): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(613,34): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(632,52): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(632,30): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(646,33): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(661,51): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(661,28): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(706,30): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(720,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(733,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(741,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(766,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(248,30): warning C4305: '-=' : troncation de 'double' à 'float'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(249,30): warning C4305: '+=' : troncation de 'double' à 'float'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(267,15): warning C4244: 'argument' : conversion de 'int' en 'GLfloat', perte possible de données
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(268,15): warning C4244: 'argument' : conversion de 'int' en 'GLfloat', perte possible de données
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(274,30): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(276,30): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(285,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(287,32): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(295,30): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(305,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(317,30): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(320,28): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(328,29): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(330,28): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(353,29): warning C4305: 'argument' : troncation de 'double' à 'float'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(355,30): warning C4305: 'argument' : troncation de 'double' à 'float'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(259,12): warning C4101: 'j' : variable locale non référencée
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(259,9): warning C4101: 'i' : variable locale non référencée
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(385,33): warning C4305: 'argument' : troncation de 'double' à 'float'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(406,84): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(406,38): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(408,88): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(408,38): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(410,91): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(410,38): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(412,87): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(412,38): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(421,84): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(421,38): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(423,88): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(423,38): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(425,91): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(425,38): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(427,87): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(427,38): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(441,33): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(442,27): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(449,35): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(450,27): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(479,21): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(480,54): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(480,32): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(488,22): warning C4305: 'argument' : troncation de 'double' à 'float'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(567,76): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(567,81): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(567,40): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(568,76): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(568,40): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(574,21): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(575,22): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(577,56): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(577,32): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(578,56): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(578,61): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(578,32): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(579,58): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(579,63): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(579,33): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(580,58): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(580,33): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(621,29): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(648,32): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(663,34): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(682,52): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(682,30): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(696,33): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(711,51): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(711,28): warning C4244: 'argument' : conversion de 'double' en 'GLfloat', perte possible de données
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(765,30): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
 C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(780,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(789,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(804,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(840,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(849,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
-C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(863,30): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(793,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(801,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(829,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(843,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(852,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(867,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(904,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(913,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Fourmis\Source.cpp(927,30): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
   Fourmis.vcxproj -> C:\Users\Jonathan\Desktop\L3\Semestre 1\UE3 Synthèse d'image\Projet\fourmis\Debug\Fourmis.exe

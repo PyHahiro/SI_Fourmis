@@ -1,3 +1,13 @@
+
+/*
+* Pour plus d'informations, vous devriez avoir en joint le rapport de projet en version PDF.
+* pour tout soucis ou spécification qui n'apparaissent pas dans les commentaires ou dans le rapport
+* merci de nous recontacter à l'adresse mail suivante Jonathan.martinmaestre71@gmail.com
+*
+* code écrit par :
+* JOULAIN Matthieu &
+* MARTIN MAESTRE Jonathan
+*/
 #define STB_IMAGE_IMPLEMENTATION
 #define M_PI           3.14159265358979323846
 #include <windows.h>
@@ -7,56 +17,24 @@
 #include <stdlib.h>
 #include "stb_image.h"
 #include <iostream>
+/*
+* Déclaration des nombreuses variables utiles
+* 
+* Variables pour gérer les entrés claviers et souris, modifier la caméra en fonction
+*/
 
-/*class Point*/
-class Point {
-public:
-    //coordonn�es x, y et z du point
-    double x;
-    double y;
-    double z;
-    // couleur r, v et b du point
-    float r;
-    float g;
-    float b;
-};
-//Tableau pour stocker les sommets du cube et leur couleur
-Point pCube[8] = {
-    {-0.5,-0.5, 0.5,1.0,0.0,0.0},
-    { 0.5, -0.5, 0.5,0.0,1.0,0.0},
-    { 0.5, -0.5, -0.5,0.0,0.0,1.0},
-    { -0.5, -0.5, -0.5,1.0,1.0,1.0},
-    { -0.5,0.5, 0.5,1.0,0.0,0.0},
-    { 0.5, 0.5, 0.5,0.0,1.0,0.0},
-    { 0.5, 0.5, -0.5,0.0,0.0,1.0},
-    { -0.5, 0.5, -0.5,1.0,1.0,1.0} };
-
-//Tableau pour stocker les indices des sommets par face pour le cube
-int fCube[6][4] = {
-  {0,3,2,1},
-  {0,1,5,4},
-  {1,2,6,5},
-  {2,3,7,6},
-  {0,4,7,3},
-  {4,5,6,7} };
-
-char presseSouris,presseClavier, haut, bas, droite, gauche;
+char presseSouris,presseClavier, haut, bas, droite, gauche; 
 int anglex, angley, x, y, xold, yold;
-float mandibuleANIM = 10;
-float Avant_xG = 10; float Avant_xD = 80;
-float Milieu_xG = 0; float Milieu_xD = 0;
-float Arriere_xG = 70; float Arriere_xD = 0;
-float Antenne = 0;
-float Fessier = 0;
-float DG = 0;
-boolean DGB = true;
-boolean Fesse = true;
-boolean Antennes = true;
-boolean Avant = false;
-boolean Milieu = false;
-boolean Arriere = false;
-boolean trigo = true;
-boolean pattes = false;
+
+/*
+* Variables utile à l'animation (optimisation possible)
+*/
+float mandibuleANIM = 10, Avant_xG = 10, Avant_xD = 80, Milieu_xG = 0, Milieu_xD = 0, Arriere_xG = 70, Arriere_xD = 0, Antenne = 0, Fessier = 0,DG = 0;
+boolean DGB = true ,Fesse = true,Antennes = true,Avant = false,Milieu = false,Arriere = false,trigo = true,pattes = false;
+
+/*
+ * Variables caméra & quadratic suivi des variables d'environnements pour la lumière
+ */
 double cam[3];
 GLUquadricObj* pObj;
 const GLfloat LightPos1[4] = { 0.0f, 10.0f, 0.0f, 1.0f };
@@ -66,6 +44,11 @@ const GLfloat light_specular[] = { 0.5f, 1.0f, 1.0f, 1.0f };
 const GLfloat light_direction[] = { 0.0f, 0.0f, 0.0f};
 const GLfloat lightPos2[4] = { 0.0f, -10.0f, 0.0f ,1.0f };
 const GLfloat light_diffuse2[] = { 0.0f , 0.5f, 0.0f, 1.0 };
+
+/*
+* Variables Textures & images
+*/
+
 GLuint textureIds[2];
 int width[2];
 int height[2];
@@ -78,7 +61,6 @@ unsigned char* Image2;
 void affichage();
 void clavier(unsigned char touche, int x, int y);
 void reshape(int x, int y);
-void idle();
 void vSpecial(int v, int x, int y); 
 void mouse(int bouton, int etat, int x, int y);
 void motion(int x, int y);
@@ -103,7 +85,10 @@ void Anim();
 
 int main(int argc, char** argv)
 {
-    cam[0] = 0; cam[1] = 1; cam[2] = -5;
+    /*
+    * Initialisation des fonctions GLUT nécéssaire
+    */
+    cam[0] = 0; cam[1] = 1; cam[2] = -5; //Caméra
     /* initialisation de glut et creation
        de la fenetre */
     glutInit(&argc, argv);
@@ -112,10 +97,11 @@ int main(int argc, char** argv)
     glutInitWindowSize(500, 500);
     glutCreateWindow("Fourmis");
 
+    //Images
     unsigned char* Image = loadJpegImage("Carbon.jpg", &width[0], &height[0]);
     unsigned char* Image2 = loadJpegImage("blacktexture.jpg", &width[1], &height[1]);
     
-
+    //Quadratic init
     pObj = gluNewQuadric();
 
     /* Initialisation d'OpenGL */
@@ -136,7 +122,7 @@ int main(int argc, char** argv)
     glLightfv(GL_LIGHT1, GL_DIFFUSE, light_diffuse2);
     glLightfv(GL_LIGHT1, GL_POSITION, lightPos2);
     
-
+    //Caméra init
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     gluPerspective(45.0, 1, 0.1, 100.0);
@@ -162,10 +148,11 @@ int main(int argc, char** argv)
     /* enregistrement des fonctions de rappel */
     glutDisplayFunc(affichage);
     glutKeyboardFunc(clavier);
-    glutSpecialFunc(vSpecial);
+    glutSpecialFunc(vSpecial); //Spécial uniquement pour les flèches
 
     glutReshapeFunc(reshape);
 
+    //Iddle => tourne en arrière plan, animation
     glutIdleFunc(Anim);
     
     glutMouseFunc(mouse);
@@ -180,7 +167,11 @@ int main(int argc, char** argv)
 
 void Anim()
 {
-    if (mandibuleANIM > 20 || mandibuleANIM < 0)
+    /*
+    * Fonction qui tournera tout le temps, pour l'animation
+    * partie automatique
+    */
+    if (mandibuleANIM > 20 || mandibuleANIM < 0) //Mandibules
     {
         trigo = !trigo;
     }
@@ -194,7 +185,7 @@ void Anim()
         mandibuleANIM -= 0.2;
     }
 
-    if (Antenne > 5 || Antenne < -5)
+    if (Antenne > 5 || Antenne < -5) //Antenne
         Antennes = !Antennes;
 
     if (Antennes)
@@ -203,23 +194,23 @@ void Anim()
         Antenne -= 0.1;
 
 
-    if (pattes)
+    if (pattes) //Pattes n'a pas été modifié mais c'est une vérification, partie non automatique
     {
-        if (Fessier > 10 || Fessier < 0)
+        if (Fessier > 10 || Fessier < 0) //Les fesses (assez transparent!)
             Fesse = !Fesse;
         if (Fesse)
             Fessier += 0.05;
         else
             Fessier -= 0.05;
 
-        if (DG > 10 || DG < -10)
+        if (DG > 10 || DG < -10) //Les movements droites gauche de la tête et du coup
             DGB = !DGB;
         if (DGB)
             DG += 0.05;
         else
             DG -= 0.05;
-
-        if (Avant_xG > 80 || Avant_xG < 10)
+         
+        if (Avant_xG > 80 || Avant_xG < 10) //Pattes avant
             Avant = !Avant;
         if (Avant)
         {
@@ -232,7 +223,7 @@ void Anim()
             Avant_xD += 0.2;
         }
 
-        if (Milieu_xG > 20 || Milieu_xG < -20)
+        if (Milieu_xG > 20 || Milieu_xG < -20) //Pattes du milieu
             Milieu = !Milieu;
         if (Milieu)
         {
@@ -245,7 +236,7 @@ void Anim()
             Milieu_xD += 0.12;
         }
 
-        if (Arriere_xG > 70 || Arriere_xG < 0)
+        if (Arriere_xG > 70 || Arriere_xG < 0) //Pattes de derrieres
             Arriere  = !Arriere;
         if (Arriere)
         {
@@ -341,11 +332,14 @@ void affichage()
     drawPattesArriere();
     glPopMatrix();
   
-    //Le reste
+    // Corps
     drawCorps();  
 
+    // Tronc (Primitive)
     drawCorpsTronc(8);
-
+    /*
+    * On a implémenté un peu d'animation ici (pour faire bouger à droite gauche), le coup et la tête
+    */
     glPushMatrix();
     glRotatef(DG, 0, 1, 0);
 
@@ -361,12 +355,12 @@ void affichage()
     drawOeil(-0.25,0.85,-1.22);
 
     drawAntenne();
-
+    //Mandibules (Primitive)
     drawMandibules(mandibuleANIM);
     glPopMatrix();
     glPopMatrix();
 
-    drawRepere();
+    //drawRepere();
     glFlush();
     //glutPostRedisplay();
     //On echange les buffers
@@ -376,6 +370,9 @@ void affichage()
 //Drawing
 void drawCorpsTronc(int n)
 {
+    /*
+    * Fonction ou sont appliqué les deux types de textures, plaqué et enroulé.
+    */
     glPushMatrix();
     glTranslated(0, 0.5, -0.1);
     glRotated(90, 1, 0, 0);
@@ -392,7 +389,12 @@ void drawCorpsTronc(int n)
 
 void primitiveCylinder(int n, float high, float largeur)
 {
-   
+   /*
+   * Fonction primitive d'un cylindre
+   * n => nombre de côté
+   * high => hauteur
+   * largeur => largeur
+   */
     for (int i = 0; i < n; i++)
     {
         if (i == 5)
@@ -427,8 +429,14 @@ void primitiveCylinder(int n, float high, float largeur)
         }
     }
 }
+
 void drawMandibules(float anim)
 {
+    /* 
+     * Modification et animation des mandibules
+     */
+    glPushMatrix();
+    glColor3f(1.0f, 0, 0);
     glPushMatrix();
     glTranslatef(0.1, 0.68, -1.4);
     glScalef(0.2, 0.2, 0.4);
@@ -442,6 +450,8 @@ void drawMandibules(float anim)
     glScalef(0.2, 0.2, 0.4);
     glRotatef(-anim, 0, 1, 0);
     Mandibule();
+    glPopMatrix();
+
     glPopMatrix();
 }
 void mandibuleFace(float y)
@@ -478,26 +488,28 @@ void Mandibule()
     mandibuleFace(0.2);
     /*
     * PARTIE CENTRALE
+    * Création des pièces une par une
+    * Possibilité d'optimisé ?
     */
     glBegin(GL_QUADS);
     glVertex3f(-0.4f, 0.0f, 0.0f);
     glVertex3f(-0.4f, 0.2f, 0.0f);
     glVertex3f(-0.3f, 0.2f, 0.4f);
-    glVertex3f(-0.3f, 0.0f, 0.4f); //bas
+    glVertex3f(-0.3f, 0.0f, 0.4f); 
     glEnd();
 
     glBegin(GL_QUADS);
-    glVertex3f(-0.1f, 0.0f, 0.4f); //bas
+    glVertex3f(-0.1f, 0.0f, 0.4f); 
     glVertex3f(-0.1f, 0.2f, 0.4f);
     glVertex3f(-0.05f, 0.2f, 0.0f);
-    glVertex3f(-0.05f, 0.0f, 0.0f); //bas
+    glVertex3f(-0.05f, 0.0f, 0.0f); 
     glEnd();
 
     glBegin(GL_QUADS);
-    glVertex3f(-0.3f, 0.0f, 0.4f); //bas
+    glVertex3f(-0.3f, 0.0f, 0.4f);
     glVertex3f(-0.3f, 0.2f, 0.4f);
     glVertex3f(-0.1f, 0.2f, 0.4f);
-    glVertex3f(-0.1f, 0.0f, 0.4f); //bas
+    glVertex3f(-0.1f, 0.0f, 0.4f);
     glEnd();
 
     glBegin(GL_QUADS);
@@ -506,7 +518,13 @@ void Mandibule()
     glVertex3f(0.05f, 0.2f, -0.05f);
     glVertex3f(0.05f, 0.0f, -0.05f);
     glEnd();
-    /* Doigts */
+    /* 
+     * Doigts
+     * J'ai séparé la mandibule en 3 parties
+     * le tronc : partie presque carré
+     * les doigts : partie en forme d'escalier (pince)
+     * dessus de la main : partie ronde de la mandibule
+     */
     glBegin(GL_QUADS);
     glVertex3f(0.05f, 0.0f, -0.05f);
     glVertex3f(0.05f, 0.2f, -0.05f);
@@ -566,6 +584,9 @@ void Mandibule()
 
 void drawCorps()
 {
+    /* 
+     * Construction et animation des fesses de la fourmis (sphere du fond vers les pattes arrières)
+     */
     glPushMatrix();
     glRotatef(-Fessier, 1, 0, 0);
     glTranslatef(0, 0.5, 1);
@@ -579,6 +600,9 @@ void drawCorps()
 
 void drawCorpsTorse()
 {
+    /*
+    * Construction sans animation du corps "torse" de la fourmis, entre le coup et notre primitive de cylindre
+    */
     glPushMatrix();
     glTranslatef(0, 0.5, -0.25);
     glRotatef(0, 0, 0, 0);
@@ -590,10 +614,13 @@ void drawCorpsTorse()
 
 void drawTete()
 {
+    /*
+    * Construction de la tête
+    */
     glPushMatrix();
     glTranslatef(0, 0.65, -1);
     glRotatef(0, 0, 0, 0);
-    glColor3d(0, 25, 0);
+    glColor3f(255, 0, 0);
     glScalef(1.0f, 0.65f, 1.0f);
     glutSolidSphere(0.45, 30, 30);
     glPopMatrix();
@@ -601,20 +628,26 @@ void drawTete()
 
 void drawOeil(float posX,float posY,float posZ)
 {
+    /*
+    * Construction des yeux
+    */
     glPushMatrix();
     glTranslatef(posX, posY, posZ);
     glRotatef(0, 0, 0, 0);
-    glColor3d(0, 0, 0);
+    glColor3f(255, 0, 0);
     glutSolidSphere(0.05, 30, 30);
     glPopMatrix();
 }
 
 void drawCou()
 {
+    /*
+    * Construction du coup
+    */
     glPushMatrix();
     glTranslatef(0, 0.65, -1.15);
     glRotatef(0, 0, 0, 0);
-    glColor3d(0, 0, 1);
+    glColor3f(255, 0, 0);
     gluCylinder(pObj, 0.05, 0.05, 0.75, 30, 30);
     glPopMatrix();
 }
@@ -623,6 +656,7 @@ void drawAntenne()
 {
     /*
     Antenne gauche
+    Code optimisable (pour évité les répétitions)
     */
 
     glPushMatrix();
@@ -687,6 +721,9 @@ void drawAntenne()
 
 void drawRepere()
 {
+    /*
+    * On le garde car il a été très utile, merci a lui !
+    */
     //axe x en rouge
     glBegin(GL_LINES);
     glColor3f(1.0, 0.0, 0.0);
@@ -710,14 +747,20 @@ void drawRepere()
 void drawPattesDevant()
 {
     /*
-    * PATTES DEVANT
-    * angle => rotation y des pattes
-    * ecart => ecart par rapport au milieu (axe 0 en y)
-    * z => ecart des pattes en Z
+    * Les pattes sont une succession de 4 cylindres applati et de boules au bout de chacun de ses cylindres
+    * 3 fonctions différentes ont été utilisé car par soucis du détail, aucune de nos pattes ne fait la même taille
+    * celles de devant étant les plus petites, celles de derriere les plus grandes
     */
+
     glPushMatrix();
 
-    //Cuisse1
+    /*Cuisse1
+    * Séparer en 4 partie
+    * Cuisse: partie sur la fourmis, la moins aligné par rapport aux 3 autres cylindres
+    * Tibia: Partie la plus grande et plus fine que la cuisse
+    * main : petite partie juste avant le cylindre des doigts et plus fine que le tibia
+    * doigt : partie encore plus petit et plus fine que la main
+    */
     glPushMatrix();
     glTranslatef(0, 0.8, 0.65);
     glRotatef(60, 1, 0, 0);
@@ -731,6 +774,7 @@ void drawPattesDevant()
     gluCylinder(pObj, 0.1, 0.1, 0.3, 35, 1);
     glPopMatrix();
 
+    glPushMatrix();
     //Tibia1
     glPushMatrix();
     glTranslatef(0, 0.45, 0.46);
@@ -765,6 +809,7 @@ void drawPattesDevant()
     glScalef(0.3f, 0.1f, 1.0f);
     gluCylinder(pObj, 0.1, 0.1, 0.15, 35, 1);
     glPopMatrix();
+    glPopMatrix();
     
     glPopMatrix();
 
@@ -773,7 +818,9 @@ void drawPattesDevant()
 void drawPattesMilieu()
 {
     /*
-    Patte milieu gauche
+    Patte milieu
+    même chose que les pattes de devant mais avec des modifications au niveau des valeurs
+    de taille, glTranslate glRotate
     */
 
     glPushMatrix();
@@ -834,7 +881,8 @@ void drawPattesMilieu()
 void drawPattesArriere()
 {
     /*
-    Patte arriere gauche
+    même chose que les pattes de devant mais avec des modifications au niveau des valeurs
+    de taille, glTranslate glRotate
     */
 
     glPushMatrix();
@@ -895,6 +943,10 @@ void drawPattesArriere()
 //KEYS
 void vSpecial(int key, int x, int y)
 {
+    /*
+    * Les signes spéciaux ici les flèches du clavier
+    * on modifie l'angle de vue de la caméra en fonction de la touche
+    */
     switch (key)
     {
         case GLUT_KEY_UP:
@@ -928,6 +980,12 @@ void vSpecial(int key, int x, int y)
 
 void clavier(unsigned char touche, int x, int y)
 {
+    /*
+    * Ici on a repris les fonctions vues en TP et rajouté des évennements pour l'appuie sur la touche
+    * - z & Z (zoom de caméra)
+    * - a (Animation)
+    */
+
     switch (touche)
     {
     case 'p': /* affichage du carre plein */
@@ -950,7 +1008,10 @@ void clavier(unsigned char touche, int x, int y)
         glDisable(GL_DEPTH_TEST);
         glutPostRedisplay();
         break;
-    case 'z':
+    /*
+    * On a décidé de faire en sorte que z zoom et Z dezoom, car, c'était mieux pour nous
+    */
+    case 'Z': //Bornes de la caméra max, on modifie les valeurs
         if (cam[0] <= 0.1 && cam[0] >= -0.1)
             cam[2] = cam[2] - 0.1;
         else if (cam[2] <= 0.1 && cam[2] >= -0.1)
@@ -966,7 +1027,7 @@ void clavier(unsigned char touche, int x, int y)
         gluLookAt(cam[0], cam[1], cam[2], 0, 0, 0, 0, 1, 0);
         glutPostRedisplay();
         break;
-    case 'Z':
+    case 'z':
         if(cam[0] <= 0.1 && cam[0] >= -0.1)
             cam[2] = cam[2] + 0.1;
         else if (cam[2] <= 0.1 && cam[2] >= -0.1)
@@ -984,6 +1045,7 @@ void clavier(unsigned char touche, int x, int y)
         break;
         break;
     case 'a':
+        //Active/désactive le boolean qui gère l'animation quand la fourmis "marche"
         pattes = !pattes;
         printf("test");
         break;
@@ -1046,3 +1108,4 @@ unsigned char* loadJpegImage(const char* fichier, int* width, int* height)
 
     return image;
 }
+
