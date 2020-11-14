@@ -66,9 +66,12 @@ const GLfloat light_specular[] = { 0.5f, 1.0f, 1.0f, 1.0f };
 const GLfloat light_direction[] = { 0.0f, 0.0f, 0.0f};
 const GLfloat lightPos2[4] = { 0.0f, -10.0f, 0.0f ,1.0f };
 const GLfloat light_diffuse2[] = { 0.0f , 0.5f, 0.0f, 1.0 };
-int width;
-int height;
+GLuint textureIds[2];
+int width[2];
+int height[2];
+
 unsigned char* Image;
+unsigned char* Image2;
 
 
 /* Prototype des fonctions */
@@ -109,7 +112,9 @@ int main(int argc, char** argv)
     glutInitWindowSize(500, 500);
     glutCreateWindow("Fourmis");
 
-    unsigned char* Image = loadJpegImage("Cuir.jpg", &width, &height);
+    unsigned char* Image = loadJpegImage("Carbon.jpg", &width[0], &height[0]);
+    unsigned char* Image2 = loadJpegImage("blacktexture.jpg", &width[1], &height[1]);
+    
 
     pObj = gluNewQuadric();
 
@@ -143,8 +148,16 @@ int main(int argc, char** argv)
 
 
     /* Parametre de texture */
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0,
+    glGenTextures(2, textureIds);
+
+    glBindTexture(GL_TEXTURE_2D, textureIds[0]);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width[0], height[0], 0,
         GL_RGB, GL_UNSIGNED_BYTE, Image);
+    
+    glBindTexture(GL_TEXTURE_2D, textureIds[1]);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width[1], height[1], 0,
+        GL_RGB, GL_UNSIGNED_BYTE, Image2);
+    
 
     /* enregistrement des fonctions de rappel */
     glutDisplayFunc(affichage);
@@ -379,10 +392,12 @@ void drawCorpsTronc(int n)
 
 void primitiveCylinder(int n, float high, float largeur)
 {
+   
     for (int i = 0; i < n; i++)
     {
         if (i == 5)
         {
+            glBindTexture(GL_TEXTURE_2D, textureIds[1]);
             glScalef(1.0, 1.0, 1.0);
             glBegin(GL_POLYGON);
             glTexCoord2f(0.0, 1);
@@ -397,6 +412,7 @@ void primitiveCylinder(int n, float high, float largeur)
         }
         else
         {
+            glBindTexture(GL_TEXTURE_2D, textureIds[0]);
             glScalef(1.0, 1.0, 1.0);
             glBegin(GL_POLYGON);
             glTexCoord2f((float)i/n, 1.0);

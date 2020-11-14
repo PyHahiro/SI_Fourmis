@@ -31,7 +31,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Cuir.jpg">
+    <Image Include="black-texture.jpg">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Carbon.jpg">
       <Filter>Fichiers de ressources</Filter>
     </Image>
   </ItemGroup>
