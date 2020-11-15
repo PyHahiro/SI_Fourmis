@@ -37,11 +37,12 @@ boolean DGB = true ,Fesse = true,Antennes = true,Avant = false,Milieu = false,Ar
  */
 double cam[3];
 GLUquadricObj* pObj;
+
 const GLfloat LightPos1[4] = { 0.0f, 10.0f, 0.0f, 1.0f };
 const GLfloat light_ambient[] = { 0.5f, 0.2f, 0.2f, 1.0f };
-const GLfloat light_diffuse[] = { 1.0f, 1.0f, 1.0f, 1.0f };
-const GLfloat light_specular[] = { 0.5f, 1.0f, 1.0f, 1.0f };
-const GLfloat light_direction[] = { 0.0f, 0.0f, 0.0f};
+const GLfloat light_diffuse[] = { 1.0f, 1.0f, 0.8f, 1.0f };
+const GLfloat light_specular[] = { 1.0f, 1.0f, 1.0f, 1.0f };
+const GLfloat light_direction[] = { 0.0f, -20.0f, 0.0f};
 const GLfloat lightPos2[4] = { 0.0f, -10.0f, 0.0f ,1.0f };
 const GLfloat light_diffuse2[] = { 0.0f , 0.5f, 0.0f, 1.0 };
 
@@ -52,7 +53,6 @@ const GLfloat light_diffuse2[] = { 0.0f , 0.5f, 0.0f, 1.0 };
 GLuint textureIds[2];
 int width[2];
 int height[2];
-
 unsigned char* Image;
 unsigned char* Image2;
 
@@ -79,7 +79,9 @@ void drawOeil(float posX,float posY,float posZ);
 void drawAntenne();
 void mandibuleFace(float y);
 void primitiveCylinder(int n, float high, float largeur);
+
 unsigned char* loadJpegImage(const char* fichier, int* width, int* height);
+
 void Anim();
 
 
@@ -104,6 +106,7 @@ int main(int argc, char** argv)
     //Quadratic init
     pObj = gluNewQuadric();
 
+
     /* Initialisation d'OpenGL */
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_NORMALIZE);
@@ -111,14 +114,14 @@ int main(int argc, char** argv)
     glEnable(GL_LIGHT0);
     glEnable(GL_LIGHT1);
 
-    //Lumi�re1
+    //Lumière
     glLightfv(GL_LIGHT0, GL_POSITION, LightPos1);
     glLightfv(GL_LIGHT0, GL_AMBIENT, light_ambient);
     glLightfv(GL_LIGHT0, GL_DIFFUSE, light_diffuse);
     glLightfv(GL_LIGHT0, GL_SPECULAR, light_specular);
     glLightfv(GL_LIGHT0, GL_SPOT_DIRECTION, light_direction);
+    glLightf(GL_LIGHT0, GL_SPOT_CUTOFF, 180.0);
 
-    //lumiere2
     glLightfv(GL_LIGHT1, GL_DIFFUSE, light_diffuse2);
     glLightfv(GL_LIGHT1, GL_POSITION, lightPos2);
     
@@ -158,7 +161,6 @@ int main(int argc, char** argv)
     glutMouseFunc(mouse);
     glutMotionFunc(motion);
 
-    /* Entree dans la boucle principale glut */
     /* Entree dans la boucle principale glut */
     glutMainLoop();
     return 0;
@@ -378,12 +380,14 @@ void drawCorpsTronc(int n)
     glRotated(90, 1, 0, 0);
     glColor3f(1, 1, 1);
     glClearColor(0, 0, 0, 1);
+
     glEnable(GL_TEXTURE_2D);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
     glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE,GL_REPLACE);
     primitiveCylinder(n, 1, 0.28);
     glDisable(GL_TEXTURE_2D);
+
     glPopMatrix();
 }
 
@@ -588,6 +592,7 @@ void drawCorps()
      * Construction et animation des fesses de la fourmis (sphere du fond vers les pattes arrières)
      */
     glPushMatrix();
+    
     glRotatef(-Fessier, 1, 0, 0);
     glTranslatef(0, 0.5, 1);
 
